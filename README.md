@@ -1,7 +1,7 @@
 #Line Reader API
 NodeJS and Express server that serves lines of text out of a file to clients.
 ##Description
-The server runs with Express on top of NodeJS and is able to read large size of text files, and serve each line of text to clients by using GET requests: **/Lines/<line number>**. The system will pre-process the file and attach a number to each line that is terminated by the `\n` character, and it will create an output text file with the indexed lines for further use to the server.
+The server runs with Express on top of NodeJS and is able to read large size of text files, and serve each line of text to clients by using `GET /Lines/<line number>`.<br /> The system will pre-process the file and attach a number to each line that is terminated by the `\n` character, and it will create an output text file with the indexed lines for further use to the server.<br />
 Processing huge lines of text can become very expensive for the system and time consuming, fortunately with Node you can use `Streams` to easily read and write data. Instead of just loading the whole file into memory, with Streams you can create a continuous flow of data and handle or manipulate these individual chunks of data by using `pipes`.
 Example:
 ```
@@ -12,7 +12,7 @@ fs.createReadStream(big-file, enconding)
     console.log(your data)
     })
 ```
-So in other words we are passing down this flow of data to the pipes, and we can do something with these chunks of data or just wait until the Stream has finished processing the file to log a message to the user.
+So in other words we are passing down this flow of data to the pipes, and we can do something with these chunks of data or just wait until the Stream has finished processing the file to log a message to the user.<br />
 There are 5 files include in the server:
 ```
 processor.js - process the text file, indexes each text line and outputs the text file the server will use to serve on the network.
@@ -45,7 +45,7 @@ $ npm start - run the server with sample file.
 $ npm test - if you want to run some basic tests with sample file.
 ```
 ###Tools
-I decided to use Node for this project because I had some familiarity with the system and it uses Javascript, and its simplicity and configuration options allow me to build a prototype of the project in a very short time. In total I believe I've spent around 8 - 9 hours over the span of two days, documenting, testing and building the project. There are still some performance issues as the files gets bigger the system response time decreases considerable, the biggest file I tested was around `1,000,000` lines, it ran ok but the performance was considerable slow.
+I decided to use Node for this project because I had some familiarity with the system and it uses Javascript, and its simplicity and configuration options allow me to build a prototype of the project in a very short time. In total I believe I've spent around 8 - 9 hours over the span of two days, documenting, testing and building the project. There are still some performance issues as the files gets bigger the system response time decreases considerable, the biggest file I tested was around `1,000,000` lines, it ran ok but the performance was considerable slow.<br />
 If I had more time I would definitely work in improve the algorithm to read and write the lines so the response time does not decrease dramatically as the file gets bigger, another point is to create a better way to handle the GET requests and some helper methods to pause/resume the requests if the system gets too busy or a single client ask too many times.
 Here are some of the libraries/modules I use for this project:
 
