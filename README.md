@@ -48,7 +48,7 @@ $ npm test - if you want to run some basic tests with sample file.
 I decided to use Node for this project because I had some familiarity with the system and it uses Javascript, and its simplicity and configuration options allow me to build a prototype of the project in a very short time. In total I believe I've spent around 8 - 9 hours over the span of two days, documenting, testing and building the project. There are still some performance issues as the files gets bigger the system response time decreases considerable, the biggest file I tested was around `1,000,000` lines, it ran ok but the performance was considerable slow.
 If I had more time I would definitely work in improve the algorithm to read and write the lines so the response time does not decrease dramatically as the file gets bigger, another point is to create a better way to handle the GET requests and some helper methods to pause/resume the requests if the system gets too busy or a single client ask too many times.
 Here are some of the libraries/modules I use for this project:
-```
+
 - [highland - a high level stream library](https://www.npmjs.com/package/highland)
 - [EventStream - to work with streams](https://github.com/dominictarr/event-stream)
 - [through2 - a nodejs stream wrapper](https://github.com/rvagg/through2)
