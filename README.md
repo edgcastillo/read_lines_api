@@ -23,7 +23,7 @@ sample.txt - text file with 100 lines.
 ```
 ##Access
 `GET /lines`
-- Returns the number of lines in file.
+- Returns the number of lines in file.<br />
 `GET /Lines/<line index>`
 - Returns the line requested along with the line number.
 ```
