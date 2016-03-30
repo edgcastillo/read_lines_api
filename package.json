@@ -1,0 +1,26 @@
+{
+  "name": "line_server_v1",
+  "version": "1.0.0",
+  "description": "Server that will serve lines of text through the network",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "mocha test.js"
+  },
+  "author": "Edwin Castillo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "chai": "^3.5.0",
+    "event-stream": "^3.3.2",
+    "express": "^4.13.4",
+    "fs": "0.0.2",
+    "highland": "^2.7.2",
+    "mocha": "^2.4.5",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.1",
+    "stream": "0.0.2",
+    "supertest": "^1.2.0",
+    "through2": "^2.0.1"
+  }
+}
